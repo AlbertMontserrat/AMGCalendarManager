@@ -1,0 +1,6 @@
+framework module AMGCalendarManager {
+  umbrella header "AMGCalendarManager-umbrella.h"
+
+  export *
+  module * { export * }
+}

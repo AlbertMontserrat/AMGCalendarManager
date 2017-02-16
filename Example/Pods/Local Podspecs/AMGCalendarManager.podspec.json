@@ -1,0 +1,22 @@
+{
+  "name": "AMGCalendarManager",
+  "version": "0.1.0",
+  "summary": "A short description of AMGCalendarManager.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Albert/AMGCalendarManager",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Albert": "albert.montserrat.gambus@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/Albert/AMGCalendarManager.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "AMGCalendarManager/Classes/**/*"
+}

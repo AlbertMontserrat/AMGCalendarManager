@@ -1,0 +1,6 @@
+framework module Pods_AMGCalendarManager_Tests {
+  umbrella header "Pods-AMGCalendarManager_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

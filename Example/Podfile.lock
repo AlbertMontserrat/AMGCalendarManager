@@ -1,0 +1,16 @@
+PODS:
+  - AMGCalendarManager (0.1.0)
+
+DEPENDENCIES:
+  - AMGCalendarManager (from `../`)
+
+EXTERNAL SOURCES:
+  AMGCalendarManager:
+    :path: ../
+
+SPEC CHECKSUMS:
+  AMGCalendarManager: e5e755c526905c586a37162cc58ca704d41a2cca
+
+PODFILE CHECKSUM: 549ca054d87c8e89f18f761ace133e1e37b60e38
+
+COCOAPODS: 1.2.0
