@@ -9,15 +9,15 @@
 Pod::Spec.new do |s|
   s.name             = 'AMGCalendarManager'
   s.version          = '1.0'
-  s.summary          = 'A short description of AMGCalendarManager.'
+  s.summary          = 'EventKit helper for Swift 3 '
   s.description      = <<-DESC
-EventKit helper for Swift 3 
+EventKit helper for Swift 3 to create, delete and update events in the easiest way!
                        DESC
 
-  s.homepage         = 'https://github.com/Albert/AMGCalendarManager'
+  s.homepage         = 'https://github.com/AlbertMontserrat/AMGCalendarManager'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Albert' => 'albert.montserrat.gambus@gmail.com' }
-  s.source           = { :git => 'https://github.com/Albert/AMGCalendarManager.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/AlbertMontserrat/AMGCalendarManager.git', :tag => s.version.to_s }
   s.ios.deployment_target = '8.0'
   s.source_files = 'AMGCalendarManager/Classes/**/*'
 

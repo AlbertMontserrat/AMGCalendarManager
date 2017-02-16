@@ -27,7 +27,7 @@ AMGCalendarManager works as a singleton and generates a new Calendar with the Bu
 Basic example:
 
 ```
-CalendarManager.shared.createEvent(completion: { (event) in
+AMGCalendarManager.shared.createEvent(completion: { (event) in
     guard let event = event else { return }
 
     event.startDate = date
@@ -36,7 +36,7 @@ CalendarManager.shared.createEvent(completion: { (event) in
     event.title = name
     event.notes = notes
     
-    CalendarManager.shared.saveEvent(event: event)
+    AMGCalendarManager.shared.saveEvent(event: event)
 
 })
 ```
@@ -44,7 +44,7 @@ CalendarManager.shared.createEvent(completion: { (event) in
 To get all events saved in this calendar:
 
 ```
-CalendarManager.shared.getAllEvents(completion: { (error, events) in
+AMGCalendarManager.shared.getAllEvents(completion: { (error, events) in
 
 })
 ```
@@ -58,7 +58,7 @@ public let calendarName: String
 
 public var calendar: EKCalendar? { get }
 
-static internal let shared: CalendarManager.CalendarManager
+static internal let shared: AMGCalendarManager.AMGCalendarManager
 
 public func createEvent(completion: ((_ event: EKEvent?) -> Void)?)
 
