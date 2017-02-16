@@ -20,6 +20,65 @@ it, simply add the following line to your Podfile:
 pod "AMGCalendarManager"
 ```
 
+## How it works
+
+AMGCalendarManager works as a singleton and generates a new Calendar with the Bundle Name.
+
+Basic example:
+
+```
+CalendarManager.shared.createEvent(completion: { (event) in
+    guard let event = event else { return }
+
+    event.startDate = date
+    event.endDate = event.startDate.addingTimeInterval(60 * 60 * 1) // 1 hour
+
+    event.title = name
+    event.notes = notes
+    
+    CalendarManager.shared.saveEvent(event: event)
+
+})
+```
+
+To get all events saved in this calendar:
+
+```
+CalendarManager.shared.getAllEvents(completion: { (error, events) in
+
+})
+```
+
+You can also get on event by id, delete one or all events, etc.
+
+```
+public var eventStore: EKEventStore
+
+public let calendarName: String
+
+public var calendar: EKCalendar? { get }
+
+static internal let shared: CalendarManager.CalendarManager
+
+public func createEvent(completion: ((_ event: EKEvent?) -> Void)?)
+
+public func saveEvent(event: EKEvent, completion: ((_ error: NSError?) -> Void)? = default)
+
+public func removeEvent(eventId: String, completion: ((_ error: NSError?) -> ())? = default)
+
+public func removeAllEvents(completion: ((_ error: NSError?) -> ())? = default)
+
+public func getAllEvents(completion: ((_ error: NSError?, _ events: [EKEvent]?) -> ())?)
+
+public func getEvents(startDate: Date, endDate: Date, completion: ((_ error: NSError?, _ events: [EKEvent]?) -> ())?)
+
+public func getEvent(eventId: String, completion: ((_ error: NSError?, _ event: EKEvent?) -> ())?)
+
+public func commit() -> Bool
+
+public func reset()
+```
+
 ## Author
 
 Albert, albert.montserrat.gambus@gmail.com

@@ -1,25 +1,101 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bdk-r4-nAR">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <scene sceneID="ZWZ-BN-llJ">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Bdk-r4-nAR" customClass="ViewController" customModule="AMGCalendarManager_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="mAV-or-MIm"/>
+                        <viewControllerLayoutGuide type="bottom" id="4cn-co-fv7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <view key="view" contentMode="scaleToFill" id="cMs-cU-BhW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIc-pL-veT">
+                                <rect key="frame" x="143.5" y="28" width="88" height="30"/>
+                                <state key="normal" title="Create Event">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="createRandomEvent:" destination="Bdk-r4-nAR" eventType="touchUpInside" id="7gU-HS-tXB"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pg2-BD-Z30">
+                                <rect key="frame" x="0.0" y="78" width="374" height="589"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="eventCell" textLabel="5ye-WO-fqJ" detailTextLabel="BzS-dr-wW4" style="IBUITableViewCellStyleSubtitle" id="GNt-aC-sOR">
+                                        <rect key="frame" x="0.0" y="22" width="374" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GNt-aC-sOR" id="KJO-wk-uAQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5ye-WO-fqJ">
+                                                    <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BzS-dr-wW4">
+                                                    <rect key="frame" x="15" y="25" width="31" height="14"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Bdk-r4-nAR" id="cfg-he-4uI"/>
+                                    <outlet property="delegate" destination="Bdk-r4-nAR" id="Mf3-WW-oPG"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRA-Af-PLp">
+                                <rect key="frame" x="323" y="28" width="36" height="30"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteAllEvents:" destination="Bdk-r4-nAR" eventType="touchUpInside" id="wre-4m-7lP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PIc-pL-veT" firstAttribute="centerX" secondItem="cMs-cU-BhW" secondAttribute="centerX" id="LS3-b9-09V"/>
+                            <constraint firstItem="pg2-BD-Z30" firstAttribute="top" secondItem="PIc-pL-veT" secondAttribute="bottom" constant="20" id="Nwq-yL-gdb"/>
+                            <constraint firstItem="PIc-pL-veT" firstAttribute="top" secondItem="mAV-or-MIm" secondAttribute="bottom" constant="8" symbolic="YES" id="PYY-RS-mO4"/>
+                            <constraint firstItem="4cn-co-fv7" firstAttribute="top" secondItem="pg2-BD-Z30" secondAttribute="bottom" id="Wtb-94-1Gq"/>
+                            <constraint firstItem="DRA-Af-PLp" firstAttribute="trailing" secondItem="cMs-cU-BhW" secondAttribute="trailingMargin" id="m2Z-pI-nEz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pg2-BD-Z30" secondAttribute="trailingMargin" id="m3o-w6-W7L"/>
+                            <constraint firstItem="pg2-BD-Z30" firstAttribute="leading" secondItem="cMs-cU-BhW" secondAttribute="leading" id="mKN-hX-aHn"/>
+                            <constraint firstItem="PIc-pL-veT" firstAttribute="centerY" secondItem="DRA-Af-PLp" secondAttribute="centerY" id="nIe-fp-ZsZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="clearEvents" destination="DRA-Af-PLp" id="fFs-ac-HjN"/>
+                        <outlet property="createEvent" destination="PIc-pL-veT" id="bRS-1a-dSX"/>
+                        <outlet property="eventsTable" destination="pg2-BD-Z30" id="s0Y-h8-Buc"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zrb-dE-MZA" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="370" y="74"/>
         </scene>
     </scenes>
 </document>

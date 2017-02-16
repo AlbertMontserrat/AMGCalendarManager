@@ -19,7 +19,7 @@ public class AMGCalendarManager{
         }
     }
     
-    static let shared = AMGCalendarManager()
+    public static let shared = AMGCalendarManager()
     
     public init(calendarName: String = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String){
         self.calendarName = calendarName
