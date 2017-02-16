@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'AMGCalendarManager_Example' do
+  pod 'AMGCalendarManager', :path => '../'
+
+  target 'AMGCalendarManager_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
