@@ -103,6 +103,7 @@ public class AMGCalendarManager{
                 let event = EKEvent(eventStore: weakSelf.eventStore)
                 event.calendar = c
                 completion?(event)
+                return
             }
             completion?(nil)
         }
