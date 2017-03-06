@@ -9,7 +9,7 @@ import EventKit
 
 public class AMGCalendarManager{
     public var eventStore = EKEventStore()
-    public let calendarName: String
+    public var calendarName: String
     
     public var calendar: EKCalendar? {
         get {
@@ -248,6 +248,7 @@ public class AMGCalendarManager{
             try self.eventStore.saveCalendar(newCalendar, commit: commit)
             return nil
         } catch let error as NSError {
+            self.calendarName = self.eventStore.defaultCalendarForNewEvents.title
             return error
         }
     }
