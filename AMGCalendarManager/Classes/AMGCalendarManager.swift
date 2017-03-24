@@ -109,7 +109,7 @@ public class AMGCalendarManager{
         }
     }
     
-    public func saveEvent(event: EKEvent, completion: ((_ error:NSError?) -> Void)? = nil) {
+    public func saveEvent(event: EKEvent, span: EKSpan = .thisEvent, completion: ((_ error:NSError?) -> Void)? = nil) {
         
         requestAuthorization() { [weak self] (allowed) in
             guard let weakSelf = self else { return }
@@ -118,7 +118,7 @@ public class AMGCalendarManager{
                 return
             }
             
-            if !weakSelf.insertEvent(event: event) {
+            if !weakSelf.insertEvent(event: event, span: span) {
                 completion?(weakSelf.getGeneralError())
             } else {
                 completion?(nil)
@@ -253,7 +253,7 @@ public class AMGCalendarManager{
         }
     }
     
-    private func insertEvent(event: EKEvent, commit: Bool = true) -> Bool {
+    private func insertEvent(event: EKEvent, span: EKSpan = .thisEvent, commit: Bool = true) -> Bool {
         do {
             try eventStore.save(event, span: .thisEvent, commit: commit)
             return true
