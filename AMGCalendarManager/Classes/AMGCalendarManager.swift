@@ -41,7 +41,7 @@ public class AMGCalendarManager{
             eventStore.requestAccess(to: .event, completion: { (allowed, error) -> Void in
                 userAllowed = !allowed
                 if userAllowed {
-                    self.eventStore = EKEventStore()
+                    self.reset()
                     if self.calendar == nil {
                         _ = self.createCalendar()
                     }
