@@ -254,6 +254,9 @@ public class AMGCalendarManager{
                 return error
             } else {
                 for source in self.eventStore.sources {
+                    if source.sourceType == .birthdays {
+                        continue
+                    }
                     let err = createCalendar(source: source)
                     if err == nil {
                         return nil
