@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AMGCalendarManager'
-  s.version          = '1.4'
+  s.version          = '1.5'
   s.summary          = 'EventKit helper for Swift 3 '
   s.description      = <<-DESC
 EventKit helper for Swift 3 to create, delete and update events in the easiest way!

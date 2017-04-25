@@ -240,18 +240,28 @@ public class AMGCalendarManager{
     
     //MARK: - Privates
     
-    private func createCalendar(commit: Bool = true) -> NSError? {
+    private func createCalendar(commit: Bool = true, source: EKSource? = nil) -> NSError? {
         let newCalendar = EKCalendar(for: .event, eventStore: self.eventStore)
         newCalendar.title = self.calendarName
         
         // defaultCalendarForNewEvents will always return a writtable source, even when there is no iCloud support.
-        newCalendar.source = self.eventStore.defaultCalendarForNewEvents.source
+        newCalendar.source = source ?? self.eventStore.defaultCalendarForNewEvents.source
         do {
             try self.eventStore.saveCalendar(newCalendar, commit: commit)
             return nil
         } catch let error as NSError {
-            self.calendarName = self.eventStore.defaultCalendarForNewEvents.title
-            return error
+            if source != nil {
+                return error
+            } else {
+                for source in self.eventStore.sources {
+                    let err = createCalendar(source: source)
+                    if err == nil {
+                        return nil
+                    }
+                }
+                self.calendarName = self.eventStore.defaultCalendarForNewEvents.title
+                return error
+            }
         }
     }
     
