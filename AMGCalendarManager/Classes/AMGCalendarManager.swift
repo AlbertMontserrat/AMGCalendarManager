@@ -162,9 +162,10 @@ public class AMGCalendarManager{
                     return
                 }
                 for event in events {
-                    if let f = filter, f(event) {
-                        _ = weakSelf.deleteEvent(event: event)
+                    if let f = filter, !f(event) {
+                        continue
                     }
+                    _ = weakSelf.deleteEvent(event: event)
                 }
                 completion?(nil)
             })
