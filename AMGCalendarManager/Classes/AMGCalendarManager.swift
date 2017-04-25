@@ -149,7 +149,7 @@ public class AMGCalendarManager{
         }
     }
     
-    public func removeAllEvents(completion: ((_ error:NSError?) -> ())? = nil){
+    public func removeAllEvents(filter: ((EKEvent) -> Bool)? = nil, completion: ((_ error:NSError?) -> ())? = nil){
         requestAuthorization() { [weak self] (allowed) in
             guard let weakSelf = self else { return }
             if !allowed {
@@ -162,7 +162,9 @@ public class AMGCalendarManager{
                     return
                 }
                 for event in events {
-                    _ = weakSelf.deleteEvent(event: event)
+                    if let f = filter, f(event) {
+                        _ = weakSelf.deleteEvent(event: event)
+                    }
                 }
                 completion?(nil)
             })
