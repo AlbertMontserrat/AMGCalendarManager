@@ -20,6 +20,8 @@ it, simply add the following line to your Podfile:
 pod "AMGCalendarManager"
 ```
 
+Remember to add the reason in Info.plist with the key "Privacy - Calendars Usage Description".
+
 ## How it works
 
 AMGCalendarManager works as a singleton and generates a new Calendar with the Bundle Name.
